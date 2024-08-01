@@ -30,10 +30,10 @@ module tt_um_example (
   	.rst(ui_in[3]),
   	.IO48(ui_in[4]),
   	.IO49(ui_in[5]),
-  	.IO31(ui_out[1]),
-  	.IO32(ui_out[2]),
-  	.uartTx(ui_out[3]),
-  	.TxDone(ui_out[4]) 
+  	.IO31(uo_out[1]),
+  	.IO32(uo_out[2]),
+  	.uartTx(uo_out[3]),
+  	.TxDone(uo_out[4]) 
   );
   
   
