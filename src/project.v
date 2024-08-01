@@ -23,5 +23,19 @@ module tt_um_example (
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
+  
+  top controlador (
+  	.clk(ui_in[1]),
+  	.key(ui_in[2]),
+  	.rst(ui_in[3]),
+  	.IO48(ui_in[4]),
+  	.IO49(ui_in[5]),
+  	.IO31(ui_out[1]),
+  	.IO32(ui_out[2]),
+  	.uartTx(ui_out[3]),
+  	.TxDone(ui_out[4]) 
+  );
+  
+  
 
 endmodule
