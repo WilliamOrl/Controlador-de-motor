@@ -214,12 +214,12 @@ module uart_tx_16_bit_dec_trigger #(parameter BAUD_RATE = 115200, parameter SEP_
 				if (inTrigger == 1) begin
 					txState <= TX_STATE_START_BIT;
 					txCounter <= 0;
-					txData[0] = SEP_CHAR;
-					txData[1] = BcdMemory[19:16] + 8'd48;
-					txData[2] = BcdMemory[15:12] + 8'd48;
-					txData[3] = BcdMemory[11:8] + 8'd48;
-					txData[4] = BcdMemory[7:4] + 8'd48;
-					txData[5] = BcdMemory[3:0] + 8'd48;
+					txData[0] <= SEP_CHAR;
+					txData[1] <= BcdMemory[19:16] + 8'd48;
+					txData[2] <= BcdMemory[15:12] + 8'd48;
+					txData[3] <= BcdMemory[11:8] + 8'd48;
+					txData[4] <= BcdMemory[7:4] + 8'd48;
+					txData[5] <= BcdMemory[3:0] + 8'd48;
 					if(separator) txByteCounter <= 0;
 					else txByteCounter <= 1;
 				end

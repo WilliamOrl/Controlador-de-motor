@@ -17,23 +17,24 @@ module tt_um_example (
 );
 
   // All output pins must be assigned. If not used, assign to 0.
-  assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
+  //assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
   assign uio_out = 0;
   assign uio_oe  = 0;
+  assign uo_out[7:4] = 0;
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
   
   top controlador (
-  	.clk(ui_in[1]),
-  	.key(ui_in[2]),
-  	.rst(ui_in[3]),
-  	.IO48(ui_in[4]),
-  	.IO49(ui_in[5]),
-  	.IO31(uo_out[1]),
-  	.IO32(uo_out[2]),
-  	.uartTx(uo_out[3]),
-  	.TxDone(uo_out[4]) 
+  	.clk(clk),
+  	.key(ui_in[0]),
+  	.rst(rst_n),
+  	.IO48(ui_in[1]),
+  	.IO49(ui_in[2]),
+  	.IO31(uo_out[0]),
+  	.IO32(uo_out[1]),
+  	.uartTx(uo_out[2]),
+  	.TxDone(uo_out[3]) 
   );
   
   
